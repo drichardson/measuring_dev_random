@@ -1,6 +1,6 @@
 Measuring Uniformity of /dev/random and /dev/urandom
 =====================================================
-This experiment measures of the randomness of a few
+This experiment measures the uniform-ness of a few
 files: /dev/random, /dev/urandom, and /dev/zero.
 
 The byte values (0-255) of each file is counted and stored in
