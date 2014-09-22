@@ -83,13 +83,14 @@ int main(int argc, char** argv) {
     // To take more samples, adjust expected value higher. I'm starting
     // out with 1 because /dev/random blocks for so long and larger values
     // on my system are a pain to work with.
-    const int expected_value = 1;
+    const int expected_value = 10;
     const int samples = 256 * expected_value;
     printf("Expected value %d\n", expected_value);
     printf("Samples per source %d\n", samples);
     run_test("/dev/zero", samples, expected_value);
     run_test("/dev/urandom", samples, expected_value);
-    printf("/dev/random blocks longer than I'm willing to wait. Apparently, my systems don't generate enough noise.\n");
+    printf("/dev/random is probably going to block. Generate some entropy using techniques\n"
+            "described in README.md\n");
     run_test("/dev/random", samples, expected_value);
     return 0;
 }
